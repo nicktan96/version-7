@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <link rel="icon" type="image/png" href="./static/favicon.png"/>
+  <title>Risk of Heart Disease</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>
+    .result{
+      position:center;
+      text-align: center;
+      color: green;
+    }
+    
+    
+            .hover{
+        position: absolute;
+        top:10%;
+        left: 105%;
+        }
+
+        .hover img{
+            cursor: pointer;
+
+        }
+
+        .hover span{
+            position:absolute;
+            bottom:10%;
+            left: 100%;
+            width:150px;
+            background: #333;
+            color: #fff;
+            padding: 13px 15px;
+            min-width: 200px;
+            max-width:200px;
+            text-align: center;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+            z-index:999;
+            opacity: 0 ;
+            transition: 0.6s opacity;
+        }
+        .hover span before{
+        content:'';
+        width: 10px;
+        height: 10px;
+        position: top;
+        top:-6px;
+        background: black;
+        }
+
+        .hover:hover > span{
+        opacity:1;
+        }
+  </style>
+  
+</head>
+
+<body>
+  <nav class="red darken-4" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Kardia Care</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#"></a></li>
+      </ul>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center red-text">Risk of Heart Disease</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict your risk level of Heart Disease
+        <br>
+        </h5>
+      </div>
+        
+      <div class="result">
+      <br>
+        <h3>{{pred}}</h3><br>
+                </div>
+      
+      <div class="comment center">
+        <h4>Keep up the good work, You are on the right track!</h4>
+        <br>
+        <h7>Here are some recommendations to help you maintain and improve your Heart Health</h7>
+        <br>
+      </div>
+      
+      <br>
+   
+        
+        <div class="button center">
+        <a href="https://kardiaacare.azurewebsites.net/home/recipes/" target="_blank"class="waves-effect waves-light btn">Tasty Recipes</a>
+        </div>
+       
+      <br>
+      
+        <div class="button center">
+        <a href="https://kardiaacare.azurewebsites.net/yogaandexercise/" target="_blank" class="waves-effect waves-light btn">Yoga And Exercise</a>
+        </div>
+    
+      
+      
+   
+      
+      
+
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>>
+
+  <footer class="page-footer grey darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="white-text">Disclaimer</h5>
+          <p class="grey-text text-lighten-4">The prediction tools are not to be used as a substitute for medical advice, diagnosis, or treatment of any health condition or problem. Users of the prediction tools should not rely on information provided by the prediction tools for their own health problems. Questions should be addressed to your own physician or other healthcare provider. </p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text"></h5>
+          <ul>
+
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text"></h5>
+          <ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>

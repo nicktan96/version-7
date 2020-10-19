@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <link rel="icon" type="image/png" href="./static/favicon.png"/>
+  <title>Risk of Heart Disease</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>
+    .result{
+      position:center;
+      text-align: center;
+      color: green;
+    }
+    
+            .hover{
+        position: absolute;
+        top:10%;
+        left: 105%;
+        }
+
+        .hover img{
+            cursor: pointer;
+
+        }
+
+        .hover span{
+            position:absolute;
+            bottom:10%;
+            left: 100%;
+            width:150px;
+            background: #333;
+            color: #fff;
+            padding: 13px 15px;
+            min-width: 200px;
+            max-width:200px;
+            text-align: center;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+            z-index:999;
+            opacity: 0 ;
+            transition: 0.6s opacity;
+        }
+        .hover span before{
+        content:'';
+        width: 10px;
+        height: 10px;
+        position: top;
+        top:-6px;
+        background: black;
+        }
+
+        .hover:hover > span{
+        opacity:1;
+        }
+  </style>
+  
+</head>
+
+<body>
+  <nav class="red darken-4" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Kardia Care</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#"></a></li>
+      </ul>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center red-text">Risk of Heart Disease</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict your risk level of Heart Disease
+        <br>
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="post" class="col s12">
+      <div class="container">
+        
+        <div class="row center">
+          <h6 class="header col s12 light"><strong>Basic Information (Required)</strong>
+        <br>
+        </h6>
+      </div>
+        
+        <div class="input-field col s4">
+            <label for="first_name"><b>Age</b></label>
+            <br>
+          <input placeholder="Please enter your Age" name="a" id="age" type="text" pattern="\d*" maxlength="2" class="validate" required>
+        </div>
+      
+
+        <div class="input-field col s4">
+          <label for="last_name"><b>Gender</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span><strong>M</strong> - (Male) <strong>F</strong> - (Female) <strong>O</strong> - (Others)</span></div></label>
+            <br>
+          <input id="gender" name="b" placeholder="M / F / O"  pattern="[A-Za-z]" type="text" maxlength="1"
+class="validate" required>
+        </div>
+        
+
+        <div class="input-field col s4">
+            <label for="_name"><b>Intensity of Chest pain</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span><strong>0</strong> - (No Pain)<br>  <strong>1</strong> - (Mild) <br> <strong>2</strong> - (Medium) <br> <strong>3</strong> - (Strong) </strong></span></div></label>
+            <br>
+          <input id="_name" name="c" placeholder="0-3" type="text" maxlength="1" pattern="\d*" class="validate" required>
+        </div>
+        
+               <div class="input-field col s4">
+            <label for="_name"><b>Cholesterol</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span>Ideal Cholesterol Level: <170</span></div></label>
+            <br>
+          <input id="_name" name="e" placeholder="Cholesterol value" maxlength="3" pattern="\d*" type="text" class="validate" required>
+        </div>
+        
+                <div class="input-field col s4">
+            <label for="_name"><b>Maximum Heart Rate</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span>Please refer to the chart above. As it is based on your age</span></div></label>
+            <br>
+          <input id="_name" name="h" placeholder="Max Heart Rate" maxlength="3" pattern="\d*" type="text" class="validate" required>
+        </div>
+        
+                <div class="input-field col s4">
+            <label for="_name"><b>Exercise Induced Angina</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span><strong>0</strong> - No Pain during exercising <br> <strong>1</strong> - Pain during exercising</strong></span></div></label>
+            <br>
+          <input id="_name" name="i" placeholder="0/1" maxlength="1" pattern="\d*" type="text" class="validate" required>
+        </div>
+        
+                <div class="row center">
+          <h6 class="header col s12 light"><strong>More In-Depth Information (Optional) </strong>
+        <br>
+        </h6>
+      </div>
+
+        <div class="input-field col s4">
+            <label for="_name"><b>Resting BPS</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span>Please Refer To The Table Above</span></div></label>
+            <br>
+          <input id="_name" name="d" placeholder="Blood Pressure" type="text" pattern="\d*" maxlength="3" class="validate">
+        </div>
+
+ 
+
+        <div class="input-field col s4">
+            <label for="_name"><b>Fasting Blood Sugar</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span><strong>0</strong> - <120ml/dL <br> <strong>1</strong> - >120ml/dL </span></div></label>
+            <br>
+          <input id="_name" name="f" placeholder="0/1" type="text" pattern="\d*" maxlength="1" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+            <label for="_name"><b>Resting ECG</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span><strong>0</strong> - Normal <br> <strong>1</strong>- Abnormal</span></div></label>
+            <br>
+          <input id="_name" name="g" placeholder="0/1" type="text" pattern="\d*" maxlength="1" class="validate">
+        </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn waves-effect waves-light red lighten-1 pulse">Predict</button>
+      </div>
+    </form>
+      </div>
+
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>>
+
+  <footer class="page-footer grey darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="white-text">Disclaimer</h5>
+          <p class="grey-text text-lighten-4">The prediction tools are not to be used as a substitute for medical advice, diagnosis, or treatment of any health condition or problem. Users of the prediction tools should not rely on information provided by the prediction tools for their own health problems. Questions should be addressed to your own physician or other healthcare provider. </p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text"></h5>
+          <ul>
+
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text"></h5>
+          <ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
