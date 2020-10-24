@@ -126,8 +126,15 @@
     <option value="3">Strong</option>
   </select>
         </div>
+        
+        
+                 <div class="input-field col s5">
+            <label for="_name"><b>Cholesterol</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span>Ideal : <200 <br> Borderline High: 200-239 <br> High: >240 <br> More Info in FAQ</span></div></label>
+            <br>
+          <input id="_name" name="e" placeholder="Cholesterol value" maxlength="3" pattern="\d*" type="text" class="validate" required>
+        </div>
       
-      <div class="input-field col s4">
+      <div class="input-field col s6">
             <label for="_name"><b>Exercise Induced Angina</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span><strong>0</strong> - No Pain during exercising <br> <strong>1</strong> - Pain during exercising</strong></span></div></label>
                  <br>
   <select class="browser-default" name="i" id="i" required>
@@ -138,11 +145,7 @@
         </div>
  
         
-         <div class="input-field col s6">
-            <label for="_name"><b>Cholesterol</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span>Ideal : <200 <br> Borderline High: 200-239 <br> High: >240 <br> More Info in FAQ</span></div></label>
-            <br>
-          <input id="_name" name="e" placeholder="Cholesterol value" maxlength="3" pattern="\d*" type="text" class="validate" required>
-        </div>
+
         
                 <div class="input-field col s6">
             <label for="_name"><b>Maximum Heart Rate</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span>Subtract your age from 220</span></div></label>
@@ -158,7 +161,7 @@
         </h6>
       </div>
 
-        <div class="input-field col s4">
+        <div class="input-field col s6">
             <label for="_name"><b>Resting BPS</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span>(Optional) <br> Please Refer To The Table In FAQ</span></div></label>
             <br>
           <input id="_name" name="d" placeholder="Blood Pressure" type="text" pattern="\d*" maxlength="3" class="validate" required>
@@ -166,7 +169,7 @@
 
  
 
-        <div class="input-field col s4">
+        <div class="input-field col s6">
             <label for="_name"><b>Fasting Blood Sugar</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span>Your Blood Sugar levels during fasting</span></div></label>
             <br>
   <select class="browser-default" name="f" id="f" required>
@@ -176,7 +179,7 @@
   </select>
         </div>
 
-        <div class="input-field col s4">
+        <div class="input-field col s12">
             <label for="_name"><b>Resting ECG</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span>Your Resting Electrocardiographic Results</span></div></label>
             <br>
   <select class="browser-default" name="g" id="g" required>
