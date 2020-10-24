@@ -83,9 +83,9 @@ def predict():
     output = prediction
 
     if output == 1:
-        return render_template('high_risk.html', pred='High Risk of Heart Disease {}'.format(output))
+        return render_template('high_risk.html', pred='High Risk of Heart Disease')
     else:
-        return render_template('low_risk.html', pred='Low Risk of Heart Disease {}'.format(output))
+        return render_template('low_risk.html', pred='Low Risk of Heart Disease ')
 
 
 
