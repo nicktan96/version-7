@@ -11,16 +11,12 @@
   <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <style>
-        .result{
-          position:center;
-          text-align: center;
-          color: green;
-        }
-        select{
-          border: 0px;
-          border-bottom:1px solid #9e9e9e;
-          color: #9e9e9e;
-        }
+    .result{
+      position:center;
+      text-align: center;
+      color: #8b0000;
+    }
+    
     
             .hover{
         position: absolute;
@@ -63,6 +59,17 @@
         .hover:hover > span{
         opacity:1;
         }
+        div.explanation{
+        text-align:center;
+        } 
+        ul{
+          display: inline-block;
+          text-align: left;
+        }
+      
+      
+      
+
   </style>
   
 </head>
@@ -85,116 +92,48 @@
         <br>
         </h5>
       </div>
-
-              <div class="row">
-    <form action='/predict' method="post" class="col s12">
-      <div class="container">
         
-        <div class="row center">
-          <h6 class="header col s12 light"><strong>Basic Information (Required)</strong>
-        <br>
-        </h6>
-      </div>
-        
-        <div class="input-field col s6">
-            <label for="first_name"><b>Age</b></label>
-            <br>
-          <input placeholder="Please enter your Age" name="a" id="age" type="text" pattern="\d*" maxlength="2" class="validate" required>
-        </div>
+      <div class="result">
+      <br>
+        <h4>{{pred}}</h4><br>
+                </div>
       
-
-        <div class="input-field col s6">
-          <label for="last_name"><b>Gender</b></label>
-            <br>
-  <select class="browser-default" name="b" id="b" required>
-    <option value="" disabled selected>Choose your Gender</option>
-    <option value="0">Male</option>
-    <option value="1">Female</option>
-    <option value="1">Other</option>
-  </select>
-        </div>
-        
-
-        <div class="input-field col s7">
-            <label for="_name"><b>Intensity of Chest pain</b></label>
-            <br>
-  <select class="browser-default" name="c" id="c" required>
-    <option value="" disabled selected>Choose your Pain Level</option>
-    <option value="0">No Pain</option>
-    <option value="1">Mild</option>
-    <option value="2">Medium</option>
-    <option value="3">Strong</option>
-  </select>
-        </div>
-        
-        
-                 <div class="input-field col s5">
-            <label for="_name"><b>Cholesterol</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span>Ideal : <200 <br> Borderline High: 200-239 <br> High: >240 <br> More Info in FAQ</span></div></label>
-            <br>
-          <input id="_name" name="e" placeholder="Cholesterol value" maxlength="3" pattern="\d*" type="text" class="validate" required>
-        </div>
-      
-      <div class="input-field col s6">
-            <label for="_name"><b>Exercise Induced Angina</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span><strong>0</strong> - No Pain during exercising <br> <strong>1</strong> - Pain during exercising</strong></span></div></label>
-                 <br>
-  <select class="browser-default" name="i" id="i" required>
-    <option value="" disabled selected>Choose your Pain Level</option>
-    <option value="1">No Pain during Exercise</option>
-    <option value="0">Pain during Exercise</option>
-  </select>
-        </div>
- 
-        
-
-        
-                <div class="input-field col s6">
-            <label for="_name"><b>Maximum Heart Rate</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span>Subtract your age from 220</span></div></label>
-            <br>
-          <input id="_name" name="h" placeholder="Max Heart Rate" maxlength="3" pattern="\d*" type="text" class="validate" required>
-        </div>
-
-
-
-                <div class="row center">
-          <h6 class="header col s12 light"><strong>More In-Depth Information</strong>
+      <div class="explanation">
+        <h6><strong>Reasons: </strong></h6>
+          <ul>
+            <li><span>&#8226;</span> Male gender has greater risk</li>
+            <li><span>&#8226;</span> Age >65 are more prone to heart disease</li>
+            <li><span>&#8226;</span> High Cholesterol levels</li>
+            <li><span>&#8226;</span> High Blood Pressure</li>
+            <li><span>&#8226;</span> Lack of Physical Inactivity</li>
+        </ul>
+          
+      </div>
+      <br>
+      <div class="comment center">
+        <h5>Don't worry, click the link below and find the nearest hospital to consult/verify with a doctor.  </h5>
         <br>
-        </h6>
-      </div>
-
-        <div class="input-field col s6">
-            <label for="_name"><b>Resting BPS</b></label>
-            <br>
-          <input id="_name" name="d" placeholder="Blood Pressure" type="text" pattern="\d*" maxlength="3" class="validate" required>
+        
+        <div class="button center">
+        <a href="https://kardiaacare.azurewebsites.net/map/" target="_blank" class="waves-effect waves-light btn">Click here to find the nearest hospital</a>
         </div>
 
- 
-
-        <div class="input-field col s6">
-            <label for="_name"><b>Fasting Blood Sugar</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span>Your Blood Sugar levels during fasting</span></div></label>
-            <br>
-  <select class="browser-default" name="f" id="f" required>
-    <option value="" disabled selected>Choose your Blood Sugar</option>
-    <option value="0">Less than 120ml/dL</option>
-    <option value="1">More than 120ml/dL</option>
-  </select>
-        </div>
-
-        <div class="input-field col s12">
-            <label for="_name"><b>Resting ECG</b><div class="hover"><img src="./static/help-circle-outline.svg" width="20" /><span>Your Resting Electrocardiographic Results</span></div></label>
-            <br>
-  <select class="browser-default" name="g" id="g" required>
-    <option value="" disabled selected>Choose your Resting ECG</option>
-    <option value="0">Normal</option>
-    <option value="1">Abnormal</option>
-  </select>
-          <br>
-        </div>
-
-     <div class="row center">
-     <button type="submit" class="btn waves-effect waves-light red lighten-1 pulse">Predict</button>
       </div>
-    </form>
-      </div>
+      
+      <br>
+      
+              <div class="button center">
+        <a href="https://kardiaacare.azurewebsites.net/home/recipes/" target="_blank"class="waves-effect waves-light btn">Heart Disease Reversal Recipes</a>
+        </div>
+       
+     
+      
+  
+      
+      
+  
+      
+      
 
     </div>
   </div>
@@ -202,7 +141,7 @@
 
     <br><br>
   </div>
-  </div>>
+  </div>
 
   <footer class="page-footer grey darken-3">
     <div class="container">
